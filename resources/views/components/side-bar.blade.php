@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">{{ config('app.name', 'Calculator') }}></div>
+        <div class="sidebar-brand-text mx-3">{{ config('app.name', 'Calculator') }}</div>
     </a>
 
     <!-- Divider -->
@@ -20,7 +20,11 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
+    <li class="nav-item active">
+        <a class="nav-link" href="{{route('calculator')}}">
+            <i class="fas fa-fw fa-calculator"></i>
+            <span>Calculator</span></a>
+    </li>
     <!-- Heading -->
     <div class="sidebar-heading">
         Interface

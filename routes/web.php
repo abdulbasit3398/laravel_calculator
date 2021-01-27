@@ -22,4 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/dashboard/calculator', function () {
+    return view('calculator');
+})->middleware(['auth'])->name('calculator');
+
 require __DIR__.'/auth.php';

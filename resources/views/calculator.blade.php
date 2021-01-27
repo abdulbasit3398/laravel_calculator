@@ -42,7 +42,7 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>2018 Closing Cost
+                                <th>2021 Closing Cost
                                 </th>
                                 <th>Postage/Media Mail
                                 </th>
@@ -274,7 +274,7 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>2018 Closing Cost
+                                <th>2021 Closing Cost
                                 </th>
                                 <th>Postage/Media Mail
                                 </th>

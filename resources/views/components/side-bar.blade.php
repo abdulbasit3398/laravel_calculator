@@ -20,7 +20,7 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link" href="{{route('calculator')}}">
             <i class="fas fa-fw fa-calculator"></i>
             <span>Calculator</span></a>

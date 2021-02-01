@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\scrapingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +26,9 @@ Route::get('/dashboard/calculator', function () {
     return view('calculator');
 })->middleware(['auth'])->name('calculator');
 
+Route::get('/dashboard/calculator3', function () {
+    return view('calculator3');
+})->middleware(['auth'])->name('calculator3');
+
+Route::get('/scrapdata', [scrapingController::class, 'ScrapData'])->name('scrapdata');
 require __DIR__.'/auth.php';

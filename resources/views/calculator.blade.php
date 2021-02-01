@@ -58,206 +58,46 @@
         /*
         Label the data
         */
-        .input-table td:nth-of-type(1):before { content: "List Price"; }
-        .input-table td:nth-of-type(2):before { content: "Shipping"; }
-        .input-table td:nth-of-type(3):before { content: "Landed Price"; }
-        .input-table td:nth-of-type(4):before { content: "Misc Fees"; }
+        .input-table td:nth-of-type(1):before { content: "Item Cost"; }
+        .input-table td:nth-of-type(2):before { content: "List Price"; }
+        .input-table td:nth-of-type(3):before { content: "Shipping"; }
+        .input-table td:nth-of-type(4):before { content: "Landed Price"; }
+        .input-table td:nth-of-type(5):before { content: "Misc Fees"; }
         
     }
+    .fa { font-size: 11px}
 </style>
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Calculator</h1>
+        <h1 class="h3 mb-0 text-gray-800">Merchant Fulfilled Amazon pricing Jan 2020		
+        </h1>
 
     </div>
     <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="form-group">
-                <label for="">Item Cost</label>
-                <input type="text" name="item_cost" id="item_cost" class="form-control" placeholder="Item Cost"  value="10"/>
-            </div>
-        </div>
+       
         <div class="col-md-12">
-            
-            <div class="card shadow mb-4">
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>2021 Closing Cost
-                                    </th>
-                                    <th>Postage/Media Mail
-                                    </th>
-                                    <th>15% of Landed
-                                    </th>
-                                    <th>Misc Fees
-                                    </th>
-                                    <th>Total Fees
-                                    </th>
-                                    <th>Profit/Loss
-                                    </th>
-                                    <th>FBA Profit/Loss
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>Under 1lbs</th>
-                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost1lbs">1.80</span></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[1lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="5.60" aria-describedby="basic-addon1">
-                                        </div>
-                                    </td>
-                                    <td>$<span class="c1_landed" id="c1_landed1lbs">150.00</span></td>
-                                    <td>$<span class="c1_miscfees" class="c1_miscfees1lbs">0.10</span></td>
-                                    <td>$<span id="c1_totalfees1lbs">147.50</span><input type="hidden" name="c1_totalfees[1lbs]"></td>
-                                    <td>$<span id="c1_profit_loss1lbs">832.40</span><input type="hidden" name="c1_profit_loss[1lbs]"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>1-2lbs</th>
-                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost2lbs">1.80</span></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[2lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="9.60" aria-describedby="basic-addon1">
-                                        </div>
-                                    </td>
-                                    <td>$<span class="c1_landed" id="c1_landed2lbs">150.00</span></td>
-                                    <td>$<span class="c1_miscfees" class="c1_miscfees2lbs">0.10</span></td>
-                                    <td>$<span id="c1_totalfees2lbs">147.50</span><input type="hidden" name="c1_totalfees[2lbs]"></td>
-                                    <td>$<span id="c1_profit_loss2lbs">832.40</span><input type="hidden" name="c1_profit_loss[2lbs]"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>2-3lbs</th>
-                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost3lbs">1.80</span></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[3lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="14.90" aria-describedby="basic-addon1">
-                                        </div>
-                                    </td>
-                                    <td>$<span class="c1_landed" id="c1_landed3lbs">150.00</span></td>
-                                    <td>$<span class="c1_miscfees" class="c1_miscfees3lbs">0.10</span></td>
-                                    <td>$<span id="c1_totalfees3lbs">147.50</span><input type="hidden" name="c1_totalfees[3lbs]"></td>
-                                    <td>$<span id="c1_profit_loss3lbs">832.40</span><input type="hidden" name="c1_profit_loss[3lbs]"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>3-4lbs</th>
-                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost4lbs">1.80</span></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[4lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="20.00" aria-describedby="basic-addon1">
-                                        </div>
-                                    </td>
-                                    <td>$<span class="c1_landed" id="c1_landed4lbs">150.00</span></td>
-                                    <td>$<span class="c1_miscfees" class="c1_miscfees4lbs">0.10</span></td>
-                                    <td>$<span id="c1_totalfees4lbs">147.50</span><input type="hidden" name="c1_totalfees[4lbs]"></td>
-                                    <td>$<span id="c1_profit_loss4lbs">832.40</span><input type="hidden" name="c1_profit_loss[4lbs]"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>4-5lbs</th>
-                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost5lbs">1.80</span></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[5lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="23.15" aria-describedby="basic-addon1">
-                                        </div>
-                                    </td>
-                                    <td>$<span class="c1_landed" id="c1_landed5lbs">150.00</span></td>
-                                    <td>$<span class="c1_miscfees" class="c1_miscfees5lbs">0.10</span></td>
-                                    <td>$<span id="c1_totalfees5lbs">147.50</span><input type="hidden" name="c1_totalfees[5lbs]"></td>
-                                    <td>$<span id="c1_profit_loss5lbs">832.40</span><input type="hidden" name="c1_profit_loss[5lbs]"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>5-6lbs</th>
-                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost6lbs">1.80</span></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[6lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="26.70" aria-describedby="basic-addon1">
-                                        </div>
-                                    </td>
-                                    <td>$<span class="c1_landed" id="c1_landed6lbs">150.00</span></td>
-                                    <td>$<span class="c1_miscfees" class="c1_miscfees6lbs">0.10</span></td>
-                                    <td>$<span id="c1_totalfees6lbs">147.50</span><input type="hidden" name="c1_totalfees[6lbs]"></td>
-                                    <td>$<span id="c1_profit_loss6lbs">832.40</span><input type="hidden" name="c1_profit_loss[6lbs]"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>6-7lbs</th>
-                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost7lbs">1.80</span></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[7lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="29.20" aria-describedby="basic-addon1">
-                                        </div>
-                                    </td>
-                                    <td>$<span class="c1_landed" id="c1_landed7lbs">150.00</span></td>
-                                    <td>$<span class="c1_miscfees" class="c1_miscfees7lbs">0.10</span></td>
-                                    <td>$<span id="c1_totalfees7lbs">147.50</span><input type="hidden" name="c1_totalfees[7lbs]"></td>
-                                    <td>$<span id="c1_profit_loss7lbs">832.40</span><input type="hidden" name="c1_profit_loss[7lbs]"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>7-8lbs</th>
-                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost8lbs">1.80</span></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[8lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="36.75" aria-describedby="basic-addon1">
-                                        </div>
-                                    </td>
-                                    <td>$<span class="c1_landed" id="c1_landed8lbs">150.00</span></td>
-                                    <td>$<span class="c1_miscfees" class="c1_miscfees8lbs">0.10</span></td>
-                                    <td>$<span id="c1_totalfees8lbs">147.50</span><input type="hidden" name="c1_totalfees[8lbs]"></td>
-                                    <td>$<span id="c1_profit_loss8lbs">832.40</span><input type="hidden" name="c1_profit_loss[8lbs]"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>8-9lbs</th>
-                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost9lbs">1.80</span></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[9lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="40.90" aria-describedby="basic-addon1">
-                                        </div>
-                                    </td>
-                                    <td>$<span class="c1_landed" id="c1_landed9lbs">150.00</span></td>
-                                    <td>$<span class="c1_miscfees" class="c1_miscfees9lbs">0.10</span></td>
-                                    <td>$<span id="c1_totalfees9lbs">147.50</span><input type="hidden" name="c1_totalfees[9lbs]"></td>
-                                    <td>$<span id="c1_profit_loss9lbs">832.40</span><input type="hidden" name="c1_profit_loss[9lbs]"></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="table-responsive">
+          <div class="table-responsive">
             <table class="table input-table">
                 <thead>
                     <tr>
-                        <th>list price</th>
-                        <th>shipping</th>
-                        <th>landed price</th>
-                        <th>Misc Fees</th>
+                      <th>Item Cost <i class="fa fa-question fa-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Your cost for one book."><i></th>  
+                      <th>list price</th>
+                      <th>shipping</th>
+                      <th>landed price</th>
+                      <th>Misc Fees <i class="fa fa-question fa-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Material & labor cost to ship the book/CD/DVD tp ypur customer."><i></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
+                      <td>
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon0">$</span>
+                          <input type="text" name="item_cost" id="item_cost" class="form-control" placeholder="Item Cost"  value="10" aria-describedby="basic-addon0"/>
+                        </div>
+                      </td>   
+                      <td>
                             <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon1">$</span>
                                 <input type="text" name="list_price" id="list_price" class="form-control" placeholder="enter base price here" value="1000" aria-describedby="basic-addon1">
@@ -280,7 +120,172 @@
                     </tr>
                 </tbody>
             </table>
+          </div> 
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2018 Closing Cost
+                                    </th>
+                                    <th>Postage/Media Mail
+                                    </th>
+                                    <th>15% of Landed
+                                    </th>
+                                    <th>Misc Fees
+                                    </th>
+                                    <th>Total Fees
+                                    </th>
+                                    <th>Profit/Loss
+                                    </th>
+                                    <th>FBA Profit/Loss
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Under 1lbs</th>
+                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost1lbs">1.80</span></td>
+                                    <td>$<span class="c1_postage" id="c1_postage1lbs">5.60</span>
+                                        <div class="input-group d-none">
+                                            <span class="input-group-addon" id="basic-addon1">$</span>
+                                            <input type="text" name="c1_postage[1lbs]" class="form-control " placeholder="Postage/Media Mail" value="5.60" aria-describedby="basic-addon1">
+                                        </div>
+                                    </td>
+                                    <td>$<span class="c1_landed" id="c1_landed1lbs">150.00</span></td>
+                                    <td>$<span class="c1_miscfees" class="c1_miscfees1lbs">0.10</span></td>
+                                    <td>$<span id="c1_totalfees1lbs">147.50</span><input type="hidden" name="c1_totalfees[1lbs]"></td>
+                                    <td>$<span id="c1_profit_loss1lbs">832.40</span><input type="hidden" name="c1_profit_loss[1lbs]"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>1-2lbs</th>
+                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost2lbs">1.80</span></td>
+                                    <td>$<span class="c1_postage" id="c1_postage2lbs">9.60</span>
+                                        <div class="input-group d-none">
+                                            <span class="input-group-addon" id="basic-addon1">$</span>
+                                            <input type="text" name="c1_postage[2lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="9.60" aria-describedby="basic-addon1">
+                                        </div>
+                                    </td>
+                                    <td>$<span class="c1_landed" id="c1_landed2lbs">150.00</span></td>
+                                    <td>$<span class="c1_miscfees" class="c1_miscfees2lbs">0.10</span></td>
+                                    <td>$<span id="c1_totalfees2lbs">147.50</span><input type="hidden" name="c1_totalfees[2lbs]"></td>
+                                    <td>$<span id="c1_profit_loss2lbs">832.40</span><input type="hidden" name="c1_profit_loss[2lbs]"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>2-3lbs</th>
+                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost3lbs">1.80</span></td>
+                                    <td>$<span class="c1_postage" id="c1_postage3lbs">14.90</span>
+                                        <div class="input-group d-none">
+                                            <span class="input-group-addon" id="basic-addon1">$</span>
+                                            <input type="text" name="c1_postage[3lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="14.90" aria-describedby="basic-addon1">
+                                        </div>
+                                    </td>
+                                    <td>$<span class="c1_landed" id="c1_landed3lbs">150.00</span></td>
+                                    <td>$<span class="c1_miscfees" class="c1_miscfees3lbs">0.10</span></td>
+                                    <td>$<span id="c1_totalfees3lbs">147.50</span><input type="hidden" name="c1_totalfees[3lbs]"></td>
+                                    <td>$<span id="c1_profit_loss3lbs">832.40</span><input type="hidden" name="c1_profit_loss[3lbs]"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>3-4lbs</th>
+                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost4lbs">1.80</span></td>
+                                    <td>$<span class="c1_postage" id="c1_postage4lbs">20.00</span>
+                                        <div class="input-group d-none">
+                                            <span class="input-group-addon" id="basic-addon1">$</span>
+                                            <input type="text" name="c1_postage[4lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="20.00" aria-describedby="basic-addon1">
+                                        </div>
+                                    </td>
+                                    <td>$<span class="c1_landed" id="c1_landed4lbs">150.00</span></td>
+                                    <td>$<span class="c1_miscfees" class="c1_miscfees4lbs">0.10</span></td>
+                                    <td>$<span id="c1_totalfees4lbs">147.50</span><input type="hidden" name="c1_totalfees[4lbs]"></td>
+                                    <td>$<span id="c1_profit_loss4lbs">832.40</span><input type="hidden" name="c1_profit_loss[4lbs]"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>4-5lbs</th>
+                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost5lbs">1.80</span></td>
+                                    <td>$<span class="c1_postage" id="c1_postage5lbs">23.15</span>
+                                        <div class="input-group d-none">
+                                            <span class="input-group-addon" id="basic-addon1">$</span>
+                                            <input type="text" name="c1_postage[5lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="23.15" aria-describedby="basic-addon1">
+                                        </div>
+                                    </td>
+                                    <td>$<span class="c1_landed" id="c1_landed5lbs">150.00</span></td>
+                                    <td>$<span class="c1_miscfees" class="c1_miscfees5lbs">0.10</span></td>
+                                    <td>$<span id="c1_totalfees5lbs">147.50</span><input type="hidden" name="c1_totalfees[5lbs]"></td>
+                                    <td>$<span id="c1_profit_loss5lbs">832.40</span><input type="hidden" name="c1_profit_loss[5lbs]"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>5-6lbs</th>
+                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost6lbs">1.80</span></td>
+                                    <td>$<span class="c1_postage" id="c1_postage6lbs">26.70</span>
+                                        <div class="input-group d-none">
+                                            <span class="input-group-addon" id="basic-addon1">$</span>
+                                            <input type="text" name="c1_postage[6lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="26.70" aria-describedby="basic-addon1">
+                                        </div>
+                                    </td>
+                                    <td>$<span class="c1_landed" id="c1_landed6lbs">150.00</span></td>
+                                    <td>$<span class="c1_miscfees" class="c1_miscfees6lbs">0.10</span></td>
+                                    <td>$<span id="c1_totalfees6lbs">147.50</span><input type="hidden" name="c1_totalfees[6lbs]"></td>
+                                    <td>$<span id="c1_profit_loss6lbs">832.40</span><input type="hidden" name="c1_profit_loss[6lbs]"></td>
+                                    <td></td>
+                                </tr>
+                                <tr  class="d-none">
+                                    <th>6-7lbs</th>
+                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost7lbs">1.80</span></td>
+                                    <td>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">$</span>
+                                            <input type="text" name="c1_postage[7lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="29.20" aria-describedby="basic-addon1">
+                                        </div>
+                                    </td>
+                                    <td>$<span class="c1_landed" id="c1_landed7lbs">150.00</span></td>
+                                    <td>$<span class="c1_miscfees" class="c1_miscfees7lbs">0.10</span></td>
+                                    <td>$<span id="c1_totalfees7lbs">147.50</span><input type="hidden" name="c1_totalfees[7lbs]"></td>
+                                    <td>$<span id="c1_profit_loss7lbs">832.40</span><input type="hidden" name="c1_profit_loss[7lbs]"></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="d-none">
+                                    <th>7-8lbs</th>
+                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost8lbs">1.80</span></td>
+                                    <td>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">$</span>
+                                            <input type="text" name="c1_postage[8lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="36.75" aria-describedby="basic-addon1">
+                                        </div>
+                                    </td>
+                                    <td>$<span class="c1_landed" id="c1_landed8lbs">150.00</span></td>
+                                    <td>$<span class="c1_miscfees" class="c1_miscfees8lbs">0.10</span></td>
+                                    <td>$<span id="c1_totalfees8lbs">147.50</span><input type="hidden" name="c1_totalfees[8lbs]"></td>
+                                    <td>$<span id="c1_profit_loss8lbs">832.40</span><input type="hidden" name="c1_profit_loss[8lbs]"></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="d-none">
+                                    <th>8-9lbs</th>
+                                    <td>$<span class="c1_closing_cost" id="c1_closing_cost9lbs">1.80</span></td>
+                                    <td>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">$</span>
+                                            <input type="text" name="c1_postage[9lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="40.90" aria-describedby="basic-addon1">
+                                        </div>
+                                    </td>
+                                    <td>$<span class="c1_landed" id="c1_landed9lbs">150.00</span></td>
+                                    <td>$<span class="c1_miscfees" class="c1_miscfees9lbs">0.10</span></td>
+                                    <td>$<span id="c1_totalfees9lbs">147.50</span><input type="hidden" name="c1_totalfees[9lbs]"></td>
+                                    <td>$<span id="c1_profit_loss9lbs">832.40</span><input type="hidden" name="c1_profit_loss[9lbs]"></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
+            
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -288,7 +293,7 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>2021 Closing Cost
+                                    <th>2018 Closing Cost
                                     </th>
                                     <th>Postage/Media Mail
                                     </th>
@@ -300,7 +305,7 @@
                                     </th>
                                     <th style="width: 150px;">
                                         Desired Profit:
-                                        <div class="input-group">
+                                        <div class="input-group d-none">
                                             <span class="input-group-addon" id="basic-addon1">$</span>
                                             <input type="text" name="desired_profit" id="desired_profit" class="form-control" placeholder="Desired Profit" value="5.55" aria-describedby="basic-addon1">
                                         </div>
@@ -377,7 +382,7 @@
                                     <td>$<span id="c2_landed6lbs">147.50</span><input type="hidden" name="c2_landed[6lbs]"></td>
                                     <td>$<span id="c2_listed6lbs">147.50</span><input type="hidden" name="c2_listed[6lbs]"></td>
                                 </tr>
-                                <tr>
+                                <tr class="d-none">
                                     <th>6-7lbs</th>
                                     <td>$<span class="c2_closing_cost" id="c2_closing_cost7lbs">1.80</span></td>
                                     <td>$<span id="c2_postage7lbs">5.60</span></td>
@@ -388,7 +393,7 @@
                                     <td>$<span id="c2_landed7lbs">147.50</span><input type="hidden" name="c2_landed[7lbs]"></td>
                                     <td>$<span id="c2_listed7lbs">147.50</span><input type="hidden" name="c2_listed[7lbs]"></td>
                                 </tr>
-                                <tr>
+                                <tr class="d-none">
                                     <th>7-8lbs</th>
                                     <td>$<span class="c2_closing_cost" id="c2_closing_cost8lbs">1.80</span></td>
                                     <td>$<span id="c2_postage8lbs">5.60</span></td>
@@ -399,7 +404,7 @@
                                     <td>$<span id="c2_landed8lbs">147.50</span><input type="hidden" name="c2_landed[8lbs]"></td>
                                     <td>$<span id="c2_listed8lbs">147.50</span><input type="hidden" name="c2_listed[8lbs]"></td>
                                 </tr>
-                                <tr>
+                                <tr class="d-none">
                                     <th>8-9lbs</th>
                                     <td>$<span class="c2_closing_cost" id="c2_closing_cost9lbs">1.80</span></td>
                                     <td>$<span id="c2_postage9lbs">5.60</span></td>
@@ -422,6 +427,10 @@
 @endsection
 @push('scripts')
   <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
     var cost = $('#item_cost').val();
       if($.trim(cost) != '')
       {
@@ -450,24 +459,24 @@
       }
 
       var _updateClosingCost = function() {
-        $('.c1_closing_cost').text(closing_cost);
+        $('.c1_closing_cost').text(closing_cost.toFixed(2));
       }
 
       var _updatelandedpercent = function() {
         c1_landed = (parseFloat(landed_price)/100)*15;
-        $('.c1_landed').text(c1_landed);
+        $('.c1_landed').text(c1_landed.toFixed(2));
         // _updatelandedPrice();
       }
 
       var _updatelandedPrice = function() {
         landed_price = (parseFloat(list_price)+parseFloat(shipping));
-        $('#landed_price').text(landed_price);
+        $('#landed_price').text(landed_price.toFixed(2));
         _updatelandedpercent();
         _updateTotalFees();
       }
 
       var _updateMiscFees = function() {
-        $('.c1_miscfees').text(misc_fees);
+        $('.c1_miscfees').text(misc_fees.toFixed(2));
         _updateTotalFees();
       }
 
@@ -656,24 +665,24 @@
       }
 
       var _updateClosingCost = function() {
-        $('.c2_closing_cost').text(closing_cost);
+        $('.c2_closing_cost').text(closing_cost.toFixed(2));
       }
 
       var _updatelandedpercent = function() {
         c1_landed = (parseFloat(landed_price)/100)*15;
-        $('.c1_landed').text(c1_landed);
+        $('.c1_landed').text(c1_landed.toFixed(2));
         // _updatelandedPrice();
       }
 
       var _updatelandedPrice = function() {
         landed_price = (parseFloat(list_price)+parseFloat(shipping));
-        $('#landed_price').text(landed_price);
+        $('#landed_price').text(landed_price.toFixed(2));
         // _updatelandedpercent();
         // _updateTotalFees();
       }
 
       var _updateMiscFees = function() {
-        $('.c2_miscfees').text(misc_fees);
+        $('.c2_miscfees').text(misc_fees.toFixed(2));
         // _updateTotalFees();
       }
 

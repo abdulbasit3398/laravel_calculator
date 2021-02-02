@@ -65,15 +65,14 @@
         .input-table td:nth-of-type(5):before { content: "Misc Fees"; }
         
     }
-    .fa { font-size: 11px}
+    .badge { color: #fff; font-size: 10px; vertical-align: middle;}
 </style>
 <div class="container-fluid">
-
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Merchant Fulfilled Amazon pricing Jan 2020		
         </h1>
-
+        <p class="text-center">Straight Mail</p>
     </div>
     <div class="row">
        
@@ -82,11 +81,11 @@
             <table class="table input-table">
                 <thead>
                     <tr>
-                      <th>Item Cost <i class="fa fa-question fa-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Your cost for one book."><i></th>  
-                      <th>list price</th>
-                      <th>shipping</th>
-                      <th>landed price</th>
-                      <th>Misc Fees <i class="fa fa-question fa-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Material & labor cost to ship the book/CD/DVD tp ypur customer."><i></th>
+                      <th>Item Cost <span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Your cost for one book."><i class="fa fa-question fa-sm"><i></span></th>  
+                      <th>List Price</th>
+                      <th>Shipping <span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Shipping the item to your customer."><i class="fa fa-question fa-sm"><i></span></th>
+                      <th style="width: 150px;">Landed Price<span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Landed cost is the total price of a product or shipment once it has arrived at a buyer's doorstep."><i class="fa fa-question fa-sm"><i></span></th>
+                      <th>Misc Fees <span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Material & labor cost to ship the book/CD/DVD tp ypur customer."><i class="fa fa-question fa-sm"><i><span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -128,30 +127,23 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>2018 Closing Cost
-                                    </th>
-                                    <th>Postage/Media Mail
-                                    </th>
-                                    <th>15% of Landed
-                                    </th>
-                                    <th>Misc Fees
-                                    </th>
-                                    <th>Total Fees
-                                    </th>
-                                    <th>Profit/Loss
-                                    </th>
-                                    <th>FBA Profit/Loss
-                                    </th>
+                                    <th>2018 Closing Cost <span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Amazon closing fee."><i class="fa fa-question fa-sm"><i></span></th>
+                                    <th>Postage/Media Mail <span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Your cost to ship USPS media mail."><i class="fa fa-question fa-sm"><i></span></th>
+                                    <th>15% of Landed <span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Merchant Fulfillment 15% referral fee percentage."><i class="fa fa-question fa-sm"><i></span></th>
+                                    <th>Misc Fees <span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Material & labor cost to ship the book/CD/DVD tp ypur customer."><i class="fa fa-question fa-sm"><i></span></th>
+                                    <th>Total Fees <span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Total merchant fulfillment fee's. "><i class="fa fa-question fa-sm"><i></span></th>
+                                    <th>Profit/Loss <span class="badge bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Profit / Loss on your book / CD / DVD weight round."><i class="fa fa-question fa-sm"><i></span></th>
+                                    <th>FBA Profit/Loss </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th>Under 1lbs</th>
                                     <td>$<span class="c1_closing_cost" id="c1_closing_cost1lbs">1.80</span></td>
-                                    <td>$<span class="c1_postage" id="c1_postage1lbs">5.60</span>
+                                    <td>$<span class="c1_postage" id="c1_postage1lbs">{{$price_list['1lbs']}}</span>
                                         <div class="input-group d-none">
                                             <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[1lbs]" class="form-control " placeholder="Postage/Media Mail" value="5.60" aria-describedby="basic-addon1">
+                                            <input type="text" name="c1_postage[1lbs]" class="form-control " placeholder="Postage/Media Mail" value="{{$price_list['1lbs']}}" aria-describedby="basic-addon1">
                                         </div>
                                     </td>
                                     <td>$<span class="c1_landed" id="c1_landed1lbs">150.00</span></td>
@@ -163,10 +155,10 @@
                                 <tr>
                                     <th>1-2lbs</th>
                                     <td>$<span class="c1_closing_cost" id="c1_closing_cost2lbs">1.80</span></td>
-                                    <td>$<span class="c1_postage" id="c1_postage2lbs">9.60</span>
+                                    <td>$<span class="c1_postage" id="c1_postage2lbs">{{$price_list['2lbs']}}</span>
                                         <div class="input-group d-none">
                                             <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[2lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="9.60" aria-describedby="basic-addon1">
+                                            <input type="text" name="c1_postage[2lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="{{$price_list['2lbs']}}" aria-describedby="basic-addon1">
                                         </div>
                                     </td>
                                     <td>$<span class="c1_landed" id="c1_landed2lbs">150.00</span></td>
@@ -178,10 +170,10 @@
                                 <tr>
                                     <th>2-3lbs</th>
                                     <td>$<span class="c1_closing_cost" id="c1_closing_cost3lbs">1.80</span></td>
-                                    <td>$<span class="c1_postage" id="c1_postage3lbs">14.90</span>
+                                    <td>$<span class="c1_postage" id="c1_postage3lbs">{{$price_list['3lbs']}}</span>
                                         <div class="input-group d-none">
                                             <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[3lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="14.90" aria-describedby="basic-addon1">
+                                            <input type="text" name="c1_postage[3lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="{{$price_list['3lbs']}}" aria-describedby="basic-addon1">
                                         </div>
                                     </td>
                                     <td>$<span class="c1_landed" id="c1_landed3lbs">150.00</span></td>
@@ -193,10 +185,10 @@
                                 <tr>
                                     <th>3-4lbs</th>
                                     <td>$<span class="c1_closing_cost" id="c1_closing_cost4lbs">1.80</span></td>
-                                    <td>$<span class="c1_postage" id="c1_postage4lbs">20.00</span>
+                                    <td>$<span class="c1_postage" id="c1_postage4lbs">{{$price_list['4lbs']}}</span>
                                         <div class="input-group d-none">
                                             <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[4lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="20.00" aria-describedby="basic-addon1">
+                                            <input type="text" name="c1_postage[4lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="{{$price_list['4lbs']}}" aria-describedby="basic-addon1">
                                         </div>
                                     </td>
                                     <td>$<span class="c1_landed" id="c1_landed4lbs">150.00</span></td>
@@ -208,10 +200,10 @@
                                 <tr>
                                     <th>4-5lbs</th>
                                     <td>$<span class="c1_closing_cost" id="c1_closing_cost5lbs">1.80</span></td>
-                                    <td>$<span class="c1_postage" id="c1_postage5lbs">23.15</span>
+                                    <td>$<span class="c1_postage" id="c1_postage5lbs">{{$price_list['5lbs']}}</span>
                                         <div class="input-group d-none">
                                             <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[5lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="23.15" aria-describedby="basic-addon1">
+                                            <input type="text" name="c1_postage[5lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="{{$price_list['5lbs']}}" aria-describedby="basic-addon1">
                                         </div>
                                     </td>
                                     <td>$<span class="c1_landed" id="c1_landed5lbs">150.00</span></td>
@@ -223,10 +215,10 @@
                                 <tr>
                                     <th>5-6lbs</th>
                                     <td>$<span class="c1_closing_cost" id="c1_closing_cost6lbs">1.80</span></td>
-                                    <td>$<span class="c1_postage" id="c1_postage6lbs">26.70</span>
+                                    <td>$<span class="c1_postage" id="c1_postage6lbs">{{$price_list['6lbs']}}</span>
                                         <div class="input-group d-none">
                                             <span class="input-group-addon" id="basic-addon1">$</span>
-                                            <input type="text" name="c1_postage[6lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="26.70" aria-describedby="basic-addon1">
+                                            <input type="text" name="c1_postage[6lbs]" class="form-control c1_postage" placeholder="Postage/Media Mail" value="{{$price_list['6lbs']}}" aria-describedby="basic-addon1">
                                         </div>
                                     </td>
                                     <td>$<span class="c1_landed" id="c1_landed6lbs">150.00</span></td>

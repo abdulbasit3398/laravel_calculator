@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\scrapingController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,23 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('home');
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard/calculator', [DashboardController::class, 'calculator'])->name('calculator');
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('dashboard');
-})->middleware(['auth']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/dashboard/calculator', function () {
-    return view('calculator');
-})->middleware(['auth'])->name('calculator');
-
-Route::get('/dashboard/calculator3', function () {
-    return view('calculator3');
-})->middleware(['auth'])->name('calculator3');
-
+    Route::get('/dashboard/calculator3', function () {
+        return view('calculator3');
+})->name('calculator3');
+});
 Route::get('/scrapdata', [scrapingController::class, 'ScrapData'])->name('scrapdata');
 require __DIR__.'/auth.php';

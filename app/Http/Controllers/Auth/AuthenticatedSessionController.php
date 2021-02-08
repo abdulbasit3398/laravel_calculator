@@ -7,6 +7,8 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\LoginHistory;
+use Stevebauman\Location\Facades\Location;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -31,7 +33,29 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        $ip_address = $request->ip();
+        
+        if ($position = Location::get($ip_address)) {
+            // Successfully retrieved position.
+            $countryName = $position->countryName;
+            $regionName = $position->regionName;
+            $cityName = $position->cityName;
+            $zipCode = $position->zipCode;
+        } else {
+            // Failed retrieving position.
+            $countryName = '';
+            $regionName = '';
+            $cityName = '';
+            $zipCode = '';
+        }
+        LoginHistory::create([
+            'user_id' => Auth::user()->id,
+            'ip_address' => $ip_address,
+            'zip_code' => $zipCode,
+            'city' => $cityName,
+            'state' => $regionName,
+            'country' => $countryName,
+        ]);
         return redirect(RouteServiceProvider::HOME);
     }
 

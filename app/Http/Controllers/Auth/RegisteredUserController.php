@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\LoginHistory;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Stevebauman\Location\Facades\Location;
 
 class RegisteredUserController extends Controller
 {
@@ -38,11 +40,42 @@ class RegisteredUserController extends Controller
             'password' => 'required|string|confirmed|min:8',
         ]);
 
+        $ip_address = $request->ip();
+        
+        if ($position = Location::get($ip_address)) {
+            // Successfully retrieved position.
+            $countryName = $position->countryName;
+            $regionName = $position->regionName;
+            $cityName = $position->cityName;
+            $zipCode = $position->zipCode;
+        } else {
+            // Failed retrieving position.
+            $countryName = '';
+            $regionName = '';
+            $cityName = '';
+            $zipCode = '';
+        }
+        
+
         Auth::login($user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'ip_address' => $ip_address,
+            'zip_code' => $zipCode,
+            'city' => $cityName,
+            'state' => $regionName,
+            'country' => $countryName,
         ]));
+
+        LoginHistory::create([
+            'user_id' => $user->id,
+            'ip_address' => $ip_address,
+            'zip_code' => $zipCode,
+            'city' => $cityName,
+            'state' => $regionName,
+            'country' => $countryName,
+        ]);
 
         event(new Registered($user));
 

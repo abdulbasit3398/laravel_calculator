@@ -4,12 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\USPSPriceList;
+use Stevebauman\Location\Facades\Location;
+
 
 class DashboardController extends Controller
 {
     //
     public function dashboard()
     {
+        // $position = Location::get('161.185.160.93');
+        // dump($position);
+        // if () {
+        //     // Successfully retrieved position.
+        //     echo $position->countryName;
+        // } else {
+        //     // Failed retrieving position.
+        // }
+        // exit();
         return view('dashboard');
     }
 

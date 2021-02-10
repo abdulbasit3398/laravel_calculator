@@ -20,7 +20,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard/calculator3', function () {
         return view('calculator3');
-})->name('calculator3');
+    })->name('calculator3');
+
+    Route::get('/dashboard/newcalculator', function () {
+        return view('newcalculator');
+    })->name('newcalculator');
 });
 Route::get('/scrapdata', [scrapingController::class, 'ScrapData'])->name('scrapdata');
 require __DIR__.'/auth.php';

@@ -32,6 +32,6 @@ class DashboardController extends Controller
             $price_list[$row->lbs.'lbs'] = $row->price;
         }
         // dump($price_list);
-        return view('calculator')->with(compact('price_list'));
+        return view('newcalculator')->with(compact('price_list'));
     }
 }

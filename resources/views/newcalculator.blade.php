@@ -342,20 +342,14 @@
         }else{
           mf_price = 0;
         }
-
-        if($.trim($('#landed_price').text()) != '')
-        {
-          landed_price = $('#landed_price').text();
-        }else{
-          landed_price = 0;
-        }
-
+        
         if($.trim($('#inbound_shipping').val()) != '')
         {
           inbound_shipping = $('#inbound_shipping').val();
         }else{
           inbound_shipping = 0;
         }
+
         if($.trim($('#item_cost').val()) != '')
         {
           item_cost = $('#item_cost').val();
@@ -377,13 +371,23 @@
           misc_fees = 0;
         }
         
+        landedprice = parseFloat(mf_price)+parseFloat(shipping);
+        landed_price = landedprice.toFixed(2);
+        $('#landed_price').text(landed_price);
+        _updateinboundCost();
       }
 
       var _updatereferralfee = function() {
         var c3_refferralfee = (parseFloat(landed_price)/100)*15;
         $('.c3_mf_referral_fee').text(c3_refferralfee.toFixed(2));
-        $('.c3_fbs_referral_fee').text(c3_refferralfee.toFixed(2));
-        // _updateTotalProfit();
+        // console.log(landed_price);
+        _updatefbareferralfee();
+      }
+
+      var _updatefbareferralfee = function() {
+        var c3_fbarefferralfee = (parseFloat(fba_price)/100)*15;
+        $('.c3_fbs_referral_fee').text(c3_fbarefferralfee.toFixed(2));
+        
         // console.log(landed_price);
         
       }
@@ -391,7 +395,26 @@
       var _updatemfLandedPrice = function() {
         $('.c3_mf_landed_price').text(parseFloat(landed_price).toFixed(2));
         // console.log(landed_price);
-        // _updateTotalProfit();
+        
+      }
+
+      
+      var _updateinboundCostBylbs = function(name='', weight=0) {
+        if(name == '2lbs')
+        { 
+          c3Inboundcost = 0.20;
+        }else{
+          c3Inboundcost = parseFloat(inbound_shipping)*parseFloat(weight);
+        }
+        $('#c3_inbound_costi'+name).text(c3Inboundcost.toFixed(2));
+      }
+
+      var _updateinboundCost = function() {
+        _updateinboundCostBylbs('1lbs', 1);
+        _updateinboundCostBylbs('2lbs', 2);
+        _updateinboundCostBylbs('3lbs', 3);
+        _updateinboundCostBylbs('4lbs', 4);
+        _updateinboundCostBylbs('5lbs', 5);
       }
 
       var _updateMFProfitLossBylbs = function(name='') {
@@ -416,7 +439,7 @@
       var _updatefbaLandedPrice = function() {
         $('.c3_fba_landed_price').text(parseFloat(fba_price).toFixed(2));
         
-        // _updateTotalProfit();
+        
       }
 
       var _updateFBAProfitLossBylbs = function(name='') {

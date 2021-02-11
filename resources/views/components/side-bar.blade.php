@@ -29,7 +29,11 @@
     <div class="sidebar-heading">
         Interface
     </div>
-
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('ip_address_hits')}}">
+            <i class="fas fa-fw fa-calculator"></i>
+            <span>IP Address Hits</span></a>
+    </li>
     <!-- Nav Item - Pages Collapse Menu -->
     {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"

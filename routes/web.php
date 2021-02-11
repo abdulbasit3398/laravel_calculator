@@ -17,7 +17,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('home');
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/dashboard/calculator', [DashboardController::class, 'calculator'])->name('calculator');
-
+    Route::get('/dashboard/ip-address-hits', [DashboardController::class, 'ip_address_hits'])->name('ip_address_hits');
+    
     Route::get('/dashboard/calculator3', function () {
         return view('calculator3');
     })->name('calculator3');

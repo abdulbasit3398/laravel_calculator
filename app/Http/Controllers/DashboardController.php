@@ -36,9 +36,9 @@ class DashboardController extends Controller
         return view('newcalculator')->with(compact('price_list'));
     }
 
-    public function loginHistory()
+    public function ip_address_hits()
     {
         $login_history = LoginHistory::get();
-        return view('login-history')->with(compact('login_history'));
+        return view('ip_address_hits')->with(compact('login_history'));
     }
 }

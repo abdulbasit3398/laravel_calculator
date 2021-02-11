@@ -104,13 +104,13 @@
                         <td>
                             <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon1">$</span>
-                                <input type="text" name="fba_price" id="fba_price" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="enter base price here" value="0" aria-describedby="basic-addon1">
+                                <input type="text" name="fba_price" id="fba_price" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="0"  aria-describedby="basic-addon1">
                             </div>
                         </td>
                         <td>
                             <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon1">$</span>
-                                <input type="text" name="mf_price" id="mf_price" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="enter base price here" value="0" aria-describedby="basic-addon1">
+                                <input type="text" name="mf_price" id="mf_price" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="0"  aria-describedby="basic-addon1">
                             </div>
                         </td>
                         <td>$<span id="landed_price">0</span></td>
@@ -118,27 +118,27 @@
                         <td>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon0">$</span>
-                            <input type="text" name="item_cost" id="item_cost" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="Item Cost"  value="0" aria-describedby="basic-addon0"/>
+                            <input type="text" name="item_cost" id="item_cost" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="0"   aria-describedby="basic-addon0"/>
                             </div>
                         </td> 
                         <td>
                             <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon1">$</span>
-                                <input type="text" name="inbound_shipping" id="inbound_shipping" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="enter your shipping base add in here" value="0" aria-describedby="basic-addon1">
+                                <input type="text" name="inbound_shipping" id="inbound_shipping" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="0"  aria-describedby="basic-addon1">
                             </div>
                         </td>  
                       
                         <td>
                             <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon1">$</span>
-                                <input type="text" name="shipping" id="shipping" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="enter your shipping base add in here" value="0" aria-describedby="basic-addon1">
+                                <input type="text" name="shipping" id="shipping" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="0"  aria-describedby="basic-addon1">
                             </div>
                         </td>
                         
                         <td>
                             <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon1">$</span>
-                                <input type="text" name="misc_fees" id="misc_fees" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="Misc Fees" value="0" aria-describedby="basic-addon1">
+                                <input type="text" name="misc_fees" id="misc_fees" onkeyup="C3CalculateProfit.init()" class="form-control" placeholder="0"  aria-describedby="basic-addon1">
                             </div>
                         </td>
                         
@@ -400,21 +400,18 @@
 
       
       var _updateinboundCostBylbs = function(name='', weight=0) {
-        if(name == '2lbs')
-        { 
-          c3Inboundcost = 0.20;
-        }else{
+        
           c3Inboundcost = parseFloat(inbound_shipping)*parseFloat(weight);
-        }
+        
         $('#c3_inbound_costi'+name).text(c3Inboundcost.toFixed(2));
       }
 
       var _updateinboundCost = function() {
         _updateinboundCostBylbs('1lbs', 1);
         _updateinboundCostBylbs('2lbs', 2);
-        _updateinboundCostBylbs('3lbs', 3);
-        _updateinboundCostBylbs('4lbs', 4);
-        _updateinboundCostBylbs('5lbs', 5);
+        _updateinboundCostBylbs('3lbs', 4);
+        _updateinboundCostBylbs('4lbs', 5);
+        _updateinboundCostBylbs('5lbs', 6);
       }
 
       var _updateMFProfitLossBylbs = function(name='') {
@@ -423,9 +420,12 @@
         var c3closingcost = $("#c3_closing_cost"+name).text();
         var c1TotalProfit = parseFloat(landed_price)-parseFloat(c3fba_referral_fee)-parseFloat(misc_fees)-parseFloat(c3postage)-parseFloat(c3closingcost)-parseFloat(item_cost);
         $('#c3_mf_profit_loss'+name).text(c1TotalProfit.toFixed(2));
+        // console.log(landed_price);
         // console.log(c3fba_referral_fee);
+        // console.log(misc_fees);
         // console.log(c3postage);
         // console.log(c3closingcost);
+        // console.log(item_cost);
       }
 
       var _updateMFProfitLoss = function() {
@@ -481,16 +481,23 @@
 
         var c3_fbaprofitloss = $('#c3_fba_profit_loss'+name).text();
         var c3_mfprofitloss = $('#c3_mf_profit_loss'+name).text();
-        if(name ='1lbs')
+        if(fba_price != 0)
         {
-          var fbamargin = (parseFloat(c3_fbaprofitloss)/parseFloat(fba_price))*100;
+          if(name =='1lbs')
+          {
+            var fbamargin = (parseFloat(c3_fbaprofitloss)/parseFloat(fba_price))*100;
+          }else{
+            var fbamargin = (parseFloat(c3_mfprofitloss)/parseFloat(fba_price))*100;
+          }
         }else{
-          var fbamargin = (parseFloat(c3_mfprofitloss)/parseFloat(fba_price))*100;
+          var fbamargin = 0;
         }
+        
         if(fbamargin == '-Infinity')
         {
-          fbamargin = 0;
+          var fbamargin = 0;
         }
+        console.log(Math.round(fbamargin));
         $('#c3_fba_net_margin'+name).text(Math.round(fbamargin));
       }
 

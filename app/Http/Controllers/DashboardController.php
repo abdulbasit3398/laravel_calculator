@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\USPSPriceList;
+use App\Models\LoginHistory;
 use Stevebauman\Location\Facades\Location;
 
 
@@ -33,5 +34,11 @@ class DashboardController extends Controller
         }
         // dump($price_list);
         return view('newcalculator')->with(compact('price_list'));
+    }
+
+    public function loginHistory()
+    {
+        $login_history = LoginHistory::get();
+        return view('login-history')->with(compact('login_history'));
     }
 }

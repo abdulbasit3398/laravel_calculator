@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Stevebauman\Location\Facades\Location;
+use Browser;
 
 class RegisteredUserController extends Controller
 {
@@ -56,6 +57,17 @@ class RegisteredUserController extends Controller
             $zipCode = '';
         }
         
+        $browserName = Browser::browserName();
+        $OSName = Browser::platformName();
+        $deviceModel = Browser::deviceModel();
+        $deviceType = '';
+        if (Browser::isMobile()) {
+            $deviceType = 'mobile';
+        }else if(Browser::isTablet()) {
+            $deviceType = 'tablet';
+        }else if(Browser::isDesktop()) {
+            $deviceType = 'desktop';
+        }
 
         Auth::login($user = User::create([
             'name' => $request->name,
@@ -66,7 +78,13 @@ class RegisteredUserController extends Controller
             'city' => $cityName,
             'state' => $regionName,
             'country' => $countryName,
+            'browser_name' => $browserName,
+            'os_name' => $OSName,
+            'device_model' => $deviceModel,
+            'device_type' => $deviceType,
         ]));
+
+        
 
         LoginHistory::create([
             'user_id' => $user->id,
@@ -75,6 +93,10 @@ class RegisteredUserController extends Controller
             'city' => $cityName,
             'state' => $regionName,
             'country' => $countryName,
+            'browser_name' => $browserName,
+            'os_name' => $OSName,
+            'device_model' => $deviceModel,
+            'device_type' => $deviceType,
         ]);
 
         event(new Registered($user));

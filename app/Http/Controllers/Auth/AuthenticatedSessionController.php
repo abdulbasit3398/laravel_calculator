@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\LoginHistory;
 use Stevebauman\Location\Facades\Location;
+use Browser;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -48,6 +49,18 @@ class AuthenticatedSessionController extends Controller
             $cityName = '';
             $zipCode = '';
         }
+        $browserName = Browser::browserName();
+        $OSName = Browser::platformName();
+        $deviceModel = Browser::deviceModel();
+        $deviceType = '';
+        if (Browser::isMobile()) {
+            $deviceType = 'mobile';
+        }else if(Browser::isTablet()) {
+            $deviceType = 'tablet';
+        }else if(Browser::isDesktop()) {
+            $deviceType = 'desktop';
+        }
+        
         LoginHistory::create([
             'user_id' => Auth::user()->id,
             'ip_address' => $ip_address,
@@ -55,6 +68,10 @@ class AuthenticatedSessionController extends Controller
             'city' => $cityName,
             'state' => $regionName,
             'country' => $countryName,
+            'browser_name' => $browserName,
+            'os_name' => $OSName,
+            'device_model' => $deviceModel,
+            'device_type' => $deviceType,
         ]);
         return redirect(RouteServiceProvider::HOME);
     }

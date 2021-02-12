@@ -20,11 +20,15 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->ipAddress('ip_address');
-            $table->string('zip_code');
-            $table->string('city');
-            $table->string('state');
-            $table->string('country');
+            $table->ipAddress('ip_address')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
+            $table->string('browser_name')->nullable();
+            $table->string('os_name')->nullable();
+            $table->string('device_model')->nullable();
+            $table->string('device_type')->nullable();
             $table->timestamps();
         });
     }

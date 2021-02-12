@@ -21,6 +21,10 @@ class CreateLoginHistoriesTable extends Migration
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('country')->nullable();
+            $table->string('browser_name')->nullable();
+            $table->string('os_name')->nullable();
+            $table->string('device_model')->nullable();
+            $table->string('device_type')->nullable();
             $table->timestamps();
         });
     }

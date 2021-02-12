@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\USPSPriceList;
 use App\Models\LoginHistory;
+use App\Models\User;
 use Stevebauman\Location\Facades\Location;
-
+use Browser;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -21,8 +24,15 @@ class DashboardController extends Controller
         // } else {
         //     // Failed retrieving position.
         // }
+        // echo Browser::deviceModel();
         // exit();
-        return view('dashboard');
+        
+        $monthly_hits = LoginHistory::whereMonth('created_at', date('m'))
+        ->whereYear('created_at', date('Y'))
+        ->count();
+        $today_hits = LoginHistory::whereDate('created_at', date('Y-m-d'))->count();
+        // exit();
+        return view('dashboard')->with(compact('monthly_hits','today_hits'));
     }
 
     public function calculator()
@@ -38,7 +48,14 @@ class DashboardController extends Controller
 
     public function ip_address_hits()
     {
-        $login_history = LoginHistory::get();
+        $login_history = LoginHistory::latest()->get();
         return view('ip_address_hits')->with(compact('login_history'));
     }
+
+    public function users()
+    {
+        $users = User::latest()->get();
+        return view('users')->with(compact('users'));
+    }
+    
 }

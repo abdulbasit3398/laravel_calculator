@@ -25,6 +25,10 @@ class User extends Authenticatable
         'city',
         'state',
         'country',
+        'browser_name',
+        'os_name',
+        'device_model',
+        'device_type',
     ];
 
     /**

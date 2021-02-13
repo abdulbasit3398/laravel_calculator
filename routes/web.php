@@ -19,6 +19,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/calculator', [DashboardController::class, 'calculator'])->name('calculator');
     Route::get('/dashboard/ip-address-hits', [DashboardController::class, 'ip_address_hits'])->name('ip_address_hits');
     Route::get('/dashboard/users', [DashboardController::class, 'users'])->name('users');
+    Route::get('/dashboard/USPS-Price-List', [DashboardController::class, 'uspsPriceList'])->name('uspsPriceList');
     
     Route::get('/dashboard/calculator3', function () {
         return view('calculator3');

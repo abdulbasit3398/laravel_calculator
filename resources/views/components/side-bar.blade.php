@@ -76,6 +76,12 @@
             <i class="fas fa-fw fa-users"></i>
             <span>Users</span></a>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('uspsPriceList')}}">
+            <i class="fas fa-fw fa-dollar-sign"></i>
+            <span>USPS Price List</span></a>
+    </li>
     <!-- Heading -->
     {{-- <div class="sidebar-heading">
         Addons

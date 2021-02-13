@@ -150,8 +150,73 @@
             
             <div class="card shadow mb-4">
                 <div class="card-body">
+                 
+                  <div class="btn-group" style="float: right;margin-bottom: 10px;">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Show/Hide Columns
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="Media Mail Weight" id="col_2">
+                        <label class="form-check-label" for="col_2">Media Mail Weight</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="2021 Closing Cost" id="col_3">
+                        <label class="form-check-label" for="col_3">2021 Closing Cost</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="(MF) Referral Fee" id="col_4">
+                        <label class="form-check-label" for="col_4">(MF) Referral Fee</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="(FBA) Referral Fee" id="col_5">
+                        <label class="form-check-label" for="col_5">(FBA) Referral Fee</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="(FBA) Pick & Pack Fee" id="col_6">
+                        <label class="form-check-label" for="col_6">(FBA) Pick & Pack Fee</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="USPS Postage" id="col_7">
+                        <label class="form-check-label" for="col_7">USPS Postage</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="(MF) Total Fees" id="col_8">
+                        <label class="form-check-label" for="col_8">(MF) Total Fees</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="Storage Cost" id="col_9">
+                        <label class="form-check-label" for="col_9">Storage Cost</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="(MF) Landed Price" id="col_10">
+                        <label class="form-check-label" for="col_10">(MF) Landed Price</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="(MF) Profit/Loss" id="col_11">
+                        <label class="form-check-label" for="col_11">(MF) Profit/Loss</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="(FBA) Landing Price" id="col_12">
+                        <label class="form-check-label" for="col_12">(FBA) Landing Price</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="FBA Profit/Loss" id="col_13">
+                        <label class="form-check-label" for="col_13">FBA Profit/Loss</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="(MF) Net Margin" id="col_14">
+                        <label class="form-check-label" for="col_14">(MF) Net Margin</label>
+                      </div>
+                      <div class="form-check form-check-inline dropdown-item">
+                        <input class="form-check-input hidecol" type="checkbox" value="(FBA) Net Margin" id="col_15">
+                        <label class="form-check-label" for="col_15">(FBA) Net Margin</label>
+                      </div>
+                      
+                    </div>
+                  </div>
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="emp_table">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -307,7 +372,35 @@
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl)
     });
+    $(document).ready(function(){
 
+      // Checkbox click
+      $(".hidecol").click(function(){
+
+          var id = this.id;
+          var splitid = id.split("_");
+          var colno = splitid[1];
+          var checked = true;
+          
+          // Checking Checkbox state
+          if($(this).is(":checked")){
+              checked = true;
+          }else{
+              checked = false;
+          }
+          setTimeout(function(){
+              if(checked){
+                  $('#emp_table td:nth-child('+colno+')').hide();
+                  $('#emp_table th:nth-child('+colno+')').hide();
+              } else{
+                  $('#emp_table td:nth-child('+colno+')').show();
+                  $('#emp_table th:nth-child('+colno+')').show();
+              }
+
+          }, 100);
+
+      });
+    });
     var fba_price = 0;
     var item_cost = 0;
     var mf_price = 0;

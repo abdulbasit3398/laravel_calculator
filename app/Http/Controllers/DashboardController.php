@@ -31,8 +31,14 @@ class DashboardController extends Controller
         ->whereYear('created_at', date('Y'))
         ->count();
         $today_hits = LoginHistory::whereDate('created_at', date('Y-m-d'))->count();
+        $total_hits = LoginHistory::count();
+        $login_states = LoginHistory::select('state', DB::raw('count(*) as total'))
+                 ->groupBy('state')
+                 ->orderByDesc('total')
+                 ->get();
+            
         // exit();
-        return view('dashboard')->with(compact('monthly_hits','today_hits'));
+        return view('dashboard')->with(compact('monthly_hits','today_hits', 'login_states','total_hits'));
     }
 
     public function calculator()
@@ -48,14 +54,20 @@ class DashboardController extends Controller
 
     public function ip_address_hits()
     {
-        $login_history = LoginHistory::latest()->get();
+        $login_history = LoginHistory::orderByDesc('created_at')->get();
         return view('ip_address_hits')->with(compact('login_history'));
     }
 
     public function users()
     {
-        $users = User::latest()->get();
+        $users = User::orderByDesc('created_at')->get();
         return view('users')->with(compact('users'));
+    }
+
+    public function uspsPriceList()
+    {
+        $uspsprice_list = USPSPriceList::get();
+        return view('usps_price_list')->with(compact('uspsprice_list'));
     }
     
 }

@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-user btn-block">
-                            Register Account
+                            <i class="fas fa-sync-alt fa-spin" style="display: none"></i> Register Account
                         </button>
                         {{-- <hr> --}}
                         {{-- <a href="index.html" class="btn btn-google btn-user btn-block">

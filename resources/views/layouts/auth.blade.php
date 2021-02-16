@@ -31,6 +31,13 @@
 
         <!-- Custom scripts for all pages-->
         <script src="{{ asset('assets/js/sb-admin-2.min.js') }}"></script>
-
+        <script>
+            $('.user').submit(function (e) { 
+                $('.btn-user').attr('disabled',true);
+                $('.btn-user').find('.fa-spin').show();
+                
+            });
+           
+        </script>
     </body>
 </html>

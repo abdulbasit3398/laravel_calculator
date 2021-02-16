@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
-                                    Login
+                                   <i class="fas fa-sync-alt fa-spin" style="display: none"></i> Login
                                 </button>
                                 {{-- <hr> --}}
                                 {{-- <a href="index.html" class="btn btn-google btn-user btn-block">

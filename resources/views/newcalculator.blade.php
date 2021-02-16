@@ -489,12 +489,12 @@
       var _updateinboundCostBylbs = function(name='', weight=0) {
         c3Inboundcost = parseFloat(inbound_shipping)*parseFloat(weight);
         $('#c3_inbound_costi'+name).text(c3Inboundcost.toFixed(2));
-        if(c3Inboundcost <= 0)
-        {
-          $('#c3_inbound_costi'+name).parents('td').css('color', 'red');
-        }else{
-          $('#c3_inbound_costi'+name).parents('td').css('color', 'green');
-        }
+        // if(c3Inboundcost <= 0)
+        // {
+        //   $('#c3_inbound_costi'+name).parents('td').css('color', 'red');
+        // }else{
+        //   $('#c3_inbound_costi'+name).parents('td').css('color', 'green');
+        // }
       }
 
       var _updateinboundCost = function() {
@@ -606,7 +606,7 @@
         {
           var fbamargin = 0;
         }
-        console.log(Math.round(fbamargin));
+        // console.log(Math.round(fbamargin));
         $('#c3_fba_net_margin'+name).text(Math.round(fbamargin));
         if(Math.round(fbamargin) <= 0)
         {

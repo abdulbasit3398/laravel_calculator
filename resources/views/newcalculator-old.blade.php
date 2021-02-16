@@ -226,10 +226,10 @@
                                     <th>Storage Cost</th>
                                     <th>USPS Postage</th>
                                     <th>(MF) Referral Fee</th>
-                                    <th>(MF) Total Fees</th>
-                                    <th>(MF) Landed Price</th>
-                                    <th>(MF) Profit/Loss</th>
-                                    <th>(MF) Net Margin</th>
+                                    <th class="bg-warning">(MF) Total Fees</th>
+                                    <th class="bg-warning">(MF) Landed Price</th>
+                                    <th class="bg-warning">(MF) Profit/Loss</th>
+                                    <th class="bg-warning">(MF) Net Margin</th>
                                     <th>(FBA) Referral Fee</th>
                                     <th>(FBA) Pick & Pack Fee</th>
                                     <th>(FBA) Landing Price</th>
@@ -245,10 +245,10 @@
                                     <td>$<span class="c3_storage_cost" id="c3_storage_cost1lbs">0.02</span></td>
                                     <td>$<span class="c3_postage" id="c3_postage1lbs">2.89</span></td>
                                     <td>$<span class="c3_mf_referral_fee" id="c3_mf_referral_fee1lbs">2.10</span></td>
-                                    <td>$<span class="c3_mf_total_fee" id="c3_mf_total_fee1lbs">3.90</span></td>
-                                    <td>$<span class="c3_mf_landed_price" id="c3_mf_landed_price1lbs">0.00</span></td>
-                                    <td>$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss1lbs">0.00</span></td>
-                                    <td><span class="c3_mf_net_margin" id="c3_mf_net_margin1lbs">0</span>%</td>
+                                    <td class="bg-warning">$<span class="c3_mf_total_fee" id="c3_mf_total_fee1lbs">3.90</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_landed_price" id="c3_mf_landed_price1lbs">0.00</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss1lbs">0.00</span></td>
+                                    <td class="bg-warning"><span class="c3_mf_net_margin" id="c3_mf_net_margin1lbs">0</span>%</td>
 
                                     <td>$<span class="c3_fbs_referral_fee" id="c3_fbs_referral_fee1lbs">2.10</span></td>
                                     <td>
@@ -268,10 +268,10 @@
                                     <td>$<span class="c3_storage_cost" id="c3_storage_cost2lbs">0.03</span></td>
                                     <td>$<span class="c3_postage" id="c3_postage2lbs">3.45</span></td>
                                     <td>$<span class="c3_mf_referral_fee" id="c3_mf_referral_fee2lbs">2.10</span></td>
-                                    <td>$<span class="c3_mf_total_fee" id="c3_mf_total_fee2lbs">3.90</span></td>
-                                    <td>$<span class="c3_mf_landed_price" id="c3_mf_landed_price2lbs">0.00</span></td>
-                                    <td>$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss2lbs">0.00</span></td>
-                                    <td><span class="c3_mf_net_margin" id="c3_mf_net_margin2lbs">0</span>%</td>
+                                    <td class="bg-warning">$<span class="c3_mf_total_fee" id="c3_mf_total_fee2lbs">3.90</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_landed_price" id="c3_mf_landed_price2lbs">0.00</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss2lbs">0.00</span></td>
+                                    <td class="bg-warning"><span class="c3_mf_net_margin" id="c3_mf_net_margin2lbs">0</span>%</td>
 
                                     <td>$<span class="c3_fbs_referral_fee" id="c3_fbs_referral_fee2lbs">2.10</span></td>
                                     <td>
@@ -292,11 +292,11 @@
                                     
                                     
 
-                                    <td>$<span class="c3_mf_total_fee" id="c3_mf_total_fee3lbs">3.90</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_total_fee" id="c3_mf_total_fee3lbs">3.90</span></td>
                                     
-                                    <td>$<span class="c3_mf_landed_price" id="c3_mf_landed_price3lbs">0.00</span></td>
-                                    <td>$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss3lbs">0.00</span></td>
-                                    <td><span class="c3_mf_net_margin" id="c3_mf_net_margin3lbs">0</span>%</td>
+                                    <td class="bg-warning">$<span class="c3_mf_landed_price" id="c3_mf_landed_price3lbs">0.00</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss3lbs">0.00</span></td>
+                                    <td class="bg-warning"><span class="c3_mf_net_margin" id="c3_mf_net_margin3lbs">0</span>%</td>
                                     <td>$<span class="c3_fbs_referral_fee" id="c3_fbs_referral_fee3lbs">2.10</span></td>
                                     <td>
                                         $<span class="c3_packfee" id="c3_packfee3lbs">5.42</span>
@@ -315,10 +315,10 @@
                                     <td>$<span class="c3_storage_cost" id="c3_storage_cost4lbs">0.03</span></td>
                                     <td>$<span class="c3_postage" id="c3_postage4lbs">4.57</span></td>
                                     <td>$<span class="c3_mf_referral_fee" id="c3_mf_referral_fee4lbs">2.10</span></td>
-                                    <td>$<span class="c3_mf_total_fee" id="c3_mf_total_fee4lbs">3.90</span></td>
-                                    <td>$<span class="c3_mf_landed_price" id="c3_mf_landed_price4lbs">0.00</span></td>
-                                    <td>$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss4lbs">0.00</span></td>
-                                    <td><span class="c3_mf_net_margin" id="c3_mf_net_margin4lbs">0</span>%</td>
+                                    <td class="bg-warning">$<span class="c3_mf_total_fee" id="c3_mf_total_fee4lbs">3.90</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_landed_price" id="c3_mf_landed_price4lbs">0.00</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss4lbs">0.00</span></td>
+                                    <td class="bg-warning"><span class="c3_mf_net_margin" id="c3_mf_net_margin4lbs">0</span>%</td>
                                     <td>$<span class="c3_fbs_referral_fee" id="c3_fbs_referral_fee4lbs">2.10</span></td>
                                     <td>
                                         $<span class="c3_packfee" id="c3_packfee4lbs">5.42</span>
@@ -335,10 +335,10 @@
                                     <td>$<span class="c3_storage_cost" id="c3_storage_cost5lbs">0.03</span></td>
                                     <td>$<span class="c3_postage" id="c3_postage5lbs">5.13</span></td>
                                     <td>$<span class="c3_mf_referral_fee" id="c3_mf_referral_fee5lbs">2.10</span></td>
-                                    <td>$<span class="c3_mf_total_fee" id="c3_mf_total_fee5lbs">3.90</span></td>
-                                    <td>$<span class="c3_mf_landed_price" id="c3_mf_landed_price5lbs">0.00</span></td>
-                                    <td>$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss5lbs">0.00</span></td>
-                                    <td><span class="c3_mf_net_margin" id="c3_mf_net_margin5lbs">0</span>%</td>
+                                    <td class="bg-warning">$<span class="c3_mf_total_fee" id="c3_mf_total_fee5lbs">3.90</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_landed_price" id="c3_mf_landed_price5lbs">0.00</span></td>
+                                    <td class="bg-warning">$<span class="c3_mf_profit_loss" id="c3_mf_profit_loss5lbs">0.00</span></td>
+                                    <td class="bg-warning"><span class="c3_mf_net_margin" id="c3_mf_net_margin5lbs">0</span>%</td>
                                     <td>$<span class="c3_fbs_referral_fee" id="c3_fbs_referral_fee5lbs">2.10</span></td>
                                     <td>
                                         $<span class="c3_packfee" id="c3_packfee5lbs">5.42</span>
@@ -487,14 +487,10 @@
 
       
       var _updateinboundCostBylbs = function(name='', weight=0) {
-        c3Inboundcost = parseFloat(inbound_shipping)*parseFloat(weight);
+        
+          c3Inboundcost = parseFloat(inbound_shipping)*parseFloat(weight);
+        
         $('#c3_inbound_costi'+name).text(c3Inboundcost.toFixed(2));
-        if(c3Inboundcost <= 0)
-        {
-          $('#c3_inbound_costi'+name).parents('td').css('color', 'red');
-        }else{
-          $('#c3_inbound_costi'+name).parents('td').css('color', 'green');
-        }
       }
 
       var _updateinboundCost = function() {
@@ -511,12 +507,6 @@
         var c3closingcost = $("#c3_closing_cost"+name).text();
         var c1TotalProfit = parseFloat(landed_price)-parseFloat(c3fba_referral_fee)-parseFloat(misc_fees)-parseFloat(c3postage)-parseFloat(c3closingcost)-parseFloat(item_cost);
         $('#c3_mf_profit_loss'+name).text(c1TotalProfit.toFixed(2));
-        if(c1TotalProfit <= 0)
-        {
-          $('#c3_mf_profit_loss'+name).parents('td').css('color', 'red');
-        }else{
-          $('#c3_mf_profit_loss'+name).parents('td').css('color', 'green');
-        }
         // console.log(landed_price);
         // console.log(c3fba_referral_fee);
         // console.log(misc_fees);
@@ -545,12 +535,6 @@
         var c3_storagecost = $("#c3_storage_cost"+name).text();
         var fbaTotalProfit = parseFloat(fba_price)-parseFloat(c3fba_referral_fee)-parseFloat(c3closingcost)-parseFloat(c3_packfee)-parseFloat(c3_inboundcost)-parseFloat(item_cost)-parseFloat(c3_storagecost);
         $('#c3_fba_profit_loss'+name).text(fbaTotalProfit.toFixed(2));
-        if(fbaTotalProfit <= 0)
-        {
-          $('#c3_fba_profit_loss'+name).parents('td').css('color', 'red');
-        }else{
-          $('#c3_fba_profit_loss'+name).parents('td').css('color', 'green');
-        }
       }
 
       var _updateFBAProfitLoss = function() {
@@ -569,12 +553,6 @@
           mfmargin = 0;
         }
         $('#c3_mf_net_margin'+name).text(Math.round(mfmargin));
-        if(Math.round(mfmargin) <= 0)
-        {
-          $('#c3_mf_net_margin'+name).parents('td').css('color', 'red');
-        }else{
-          $('#c3_mf_net_margin'+name).parents('td').css('color', 'green');
-        }
         // console.log(landed_price);
       }
 
@@ -608,12 +586,6 @@
         }
         console.log(Math.round(fbamargin));
         $('#c3_fba_net_margin'+name).text(Math.round(fbamargin));
-        if(Math.round(fbamargin) <= 0)
-        {
-          $('#c3_fba_net_margin'+name).parents('td').css('color', 'red');
-        }else{
-          $('#c3_fba_net_margin'+name).parents('td').css('color', 'green');
-        }
       }
 
       var _updateFBAMargin = function() {
